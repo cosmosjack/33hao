@@ -22,8 +22,8 @@ class atestControl extends BaseHomeControl{
         $list = $redis->getKeys("*");*/
 
         $cache = Cache::connect('redis');
-//        $cache->set('test','hello world');
-//        $cache->set("ceshi",'ceshi');
+        $cache->set('test','hello world');
+        $cache->set("ceshi",'ceshi');
         echo $cache->get('test');
         echo $cache->get('ceshi');
 
