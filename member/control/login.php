@@ -50,7 +50,7 @@ class loginControl extends BaseLoginControl {
             if(isset($member_info['error'])) {
                 showDialog($member_info['error'],'','error',$script);
             }
-//            session_regenerate_id(true);
+            session_regenerate_id(true);
 
             // 自动登录
             $member_info['auto_login'] = $_POST['auto_login'];
