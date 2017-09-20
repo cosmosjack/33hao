@@ -46,11 +46,12 @@ class loginControl extends BaseLoginControl {
             $login_info = array();
             $login_info['user_name'] = $_POST['user_name'];
             $login_info['password'] = $_POST['password'];
+            session_regenerate_id(true);
+
             $member_info = $model_member->login($login_info);
             if(isset($member_info['error'])) {
                 showDialog($member_info['error'],'','error',$script);
             }
-            session_regenerate_id(true);
 
             // 自动登录
             $member_info['auto_login'] = $_POST['auto_login'];
