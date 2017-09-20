@@ -50,11 +50,11 @@ class loginControl extends BaseLoginControl {
             if(isset($member_info['error'])) {
                 showDialog($member_info['error'],'','error',$script);
             }
+            session_regenerate_id(true);
 
             // 自动登录
             $member_info['auto_login'] = $_POST['auto_login'];
             $model_member->createSession($member_info, true);
-            session_regenerate_id(false);
             if ($_GET['inajax'] == 1){
                 showDialog('',$_POST['ref_url'] == '' ? 'reload' : $_POST['ref_url'],'js');
             } else {
