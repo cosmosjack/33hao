@@ -56,8 +56,6 @@ class loginControl extends BaseLoginControl {
             $member_info['auto_login'] = $_POST['auto_login'];
             $model_member->createSession($member_info, true);
 
-            var_dump($_SESSION);
-            die;
             if ($_GET['inajax'] == 1){
                 showDialog('',$_POST['ref_url'] == '' ? 'reload' : $_POST['ref_url'],'js');
             } else {

@@ -13,6 +13,7 @@
 defined('In33hao') or exit('Access Invalid!');
 class indexControl extends BaseHomeControl{
     public function indexOp(){
+        var_dump($_SESSION);
         Language::read('home_index_index');
         Tpl::output('index_sign','index');
 
