@@ -46,7 +46,7 @@ class loginControl extends BaseLoginControl {
             $login_info = array();
             $login_info['user_name'] = $_POST['user_name'];
             $login_info['password'] = $_POST['password'];
-            session_regenerate_id();
+//            session_regenerate_id();
 
             $member_info = $model_member->login($login_info);
             if(isset($member_info['error'])) {
